@@ -67,14 +67,15 @@ cd ..
 rm -rf single-gpu-passthrough
 
 file1="/etc/systemd/system/libvirt-nosleep@.service"
-file2="/bin/vfio-startup.sh"
-file3="/bin/vfio-teardown.sh"
+file2="/usr/local/bin/vfio-startup"
+file3="/usr/local/bin/vfio-teardown"
 file4="/etc/libvirt/hooks/qemu"
 
 # Check if all four files exist
 if [ -f "$file1" ] && [ -f "$file2" ] && [ -f "$file3" ] && [ -f "$file4" ]; then
-    echo "All four files exist. Doing nothing."
+    echo ""
+    echo "Done"
 else
-    echo "One or more files do not exist. Stopping."
-    exit 1  # Exit the script with an error code
+    echo "CRITICAL ERR: Files: $file1, $file2, $file3, $file4 DO NOT EXIST"
+    exit 0
 fi

@@ -48,34 +48,26 @@ echo ""
 while true; do
     echo $GPU
     echo "==== What OS are you using? ===="
-    echo "1. Pop!_OS"
-    echo "2. Debian"
-    echo "3. Arch"
-    echo "4. Fedora"
-    echo "5. Exit to CLI"
+    echo "1. Debian"
+    echo "2. Arch"
+    echo "3. Fedora"
+    echo "4. Exit to CLI"
     read -p "Enter your choice (1-5): " choice2
 
     case $choice2 in
         1)
-            echo "Pop!_OS"
-	    echo "pop" > OS.txt
-	    ./ins-phase1/pop1_install.sh
-            echo "REBOOT REQUIRED"
-            break
-            ;;
-        2)
             echo "Deb"
             break
             ;;
-        3)
+        2)
             echo "arc"
             break
             ;;
-        4)
+        3)
             echo "Fed"
             break
             ;;
-        5)
+        4)
             echo "Exiting to CLI."
             exit 0
             ;;
