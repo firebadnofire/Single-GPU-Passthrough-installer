@@ -1,47 +1,36 @@
 #!/bin/bash
 
-# Check if the script is run with sudo
-if [[ $EUID -ne 0 ]]; then
-    echo "This script must be run with sudo."
+needed="Single-GPU-Passthrough-installer"
+wd=$(pwd)
+
+if echo "$wd" | grep -q "$needed"; then
+    sleep 0
+else
+    echo "Please run this script in the Single-GPU-Passthrough-installer directory"
+    exit 0
+fi
+
+
+if [ "$EUID" -ne 0 ]; then
+    echo "This script must be run as root."
     exit 1
 fi
 
-# Display menu and get user choice
-while true; do
-    echo "Choose an option:"
-    echo "1. Pop!_OS"
-    echo "2. Debian"
-    echo "3. Arch"
-    echo "4. Fedora"
-    echo "5. Exit"
+OS=$(sed -n -e 1p OS.txt)
 
-    read -p "Enter your choice (1-5): " choice
+if [ "$OS" == "pop" ]; then
+	./ins-phase2/pop2-install.sh
 
-    case $choice in
-        1)
-            chmod +x ./pop2_install.sh
-	    ./pop2_install.sh
-            exit 0
-            ;;
-        2)
-	    echo "Deb"
-            exit 0
-            ;;
-        3)
-            echo "arc"
-            exit 0
-            ;;
-        4)
-            echo "Fed"
-	    exit 0
-            ;;
-        5)
-            echo "Exiting..."
-            exit 0
-            ;;
-        *)
-            echo "Invalid choice. Please enter a number between 1 and 5."
-            ;;
-    esac
+elif [ "$OS" == "deb" ]; then
+	ins-phase2/deb2-install.sh
 
-done
+elif [ "$OS" == "arch" ]; then
+	ins-phase2/arch2-install.sh
+
+elif [ "$OS" == "fedora" ]; then
+	ins-phase2/fedora2-install.sh
+
+else
+    echo "OS.txt does not match any expected values"
+
+fi
