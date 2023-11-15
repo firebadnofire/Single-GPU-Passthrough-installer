@@ -9,4 +9,4 @@ Simple script that will install https://gitlab.com/risingprismtv/single-gpu-pass
 
 This is NOT finished by any degree and I am not responsable for any damage that may or may not occur.
 
-Right now I am working on arch and will move to other distros so expect development to be slow.
+Right now I am working on arch and will move to other distros. I am also WAY more concerned with school than this so expect development to be slow.
