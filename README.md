@@ -4,7 +4,8 @@
   <img alt="GitHub commit activity (branch)" src="https://img.shields.io/github/commit-activity/t/firebadnofire/Single-GPU-Passthrough-installer">
 </p>
 
-#Single-GPU-Passthrough-installer:
+# Single-GPU-Passthrough-installer:
+
 Simple script that will install https://gitlab.com/risingprismtv/single-gpu-passthrough
 
 This is NOT finished by any degree and I am not responsable for any damage that may or may not occur.
