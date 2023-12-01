@@ -39,6 +39,7 @@ if [ -e "/usr/share/vgabios/patched.rom" ]; then
 			chown $SUDO_USER:$SUDO_USER /usr/share/vgabios/patched.rom
 		else
 			echo "patched.rom not found. Please make a patched.rom then place it in GPU-ROM"
+			exit
 		fi
 	elif [ "$GPU" == "AMD" ]; then
 		#AMD GPUs don't need a ROM file

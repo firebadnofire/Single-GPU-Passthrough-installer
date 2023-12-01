@@ -22,8 +22,16 @@ install.sh: This script does the majority of the work. It basically goes through
 
 NOTE: DO NOT delete OS.txt, CPU.txt, or GPU.txt until you have run and completed install.sh. These store the OS, CPU model, and GPU model. Which is essential to installing this.
 
+## Warning:
+
+When I say "This script runs on Debian, Arch, etc" I do NOT mean Debian (and its forks), Arch (and its forks), etc. This script is meant for the exact distro I specify since I do not know if it will be compatable with distros based on them. You can try, but only at your own risk. I have zero responability for a broken system. You have been warned.
+
 ## Post run:
 
-After running init.sh and install.sh, check out <https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/5)-Configuring-Virtual-Machine-Manager>, <https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/8)-Attaching-the-GPU-to-your-VM>, and <https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/9)-Additional-editing-of-xml-file>
+After running init.sh, reboot then check out <https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/5)-Configuring-Virtual-Machine-Manager> to make your VM first
+
+I highly recommend creating your VM after rebooting rather than after install.sh because it may have trouble creating the VM if you don't.
+
+After running install.sh, check out <https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/8)-Attaching-the-GPU-to-your-VM>, and <https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/9)-Additional-editing-of-xml-file> to complete your VM and pass the GPU.
 
 These will show you how to make the VM in virt-manager.

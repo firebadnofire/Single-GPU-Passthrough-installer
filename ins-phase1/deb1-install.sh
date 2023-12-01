@@ -2,7 +2,7 @@
 #Define vars
 GPU=$(sed -n -e 1p GPU.txt)
 CPU=$(sed -n -e 1p CPU.txt)
-sed -i "s/GRUB_CMDLINE_LINUX=\"\"/GRUB_CMDLINE_LINUX=\"$CPU video=efifb:off iommu=pt\"/" /etc/default/grub
+sed -i "s/GRUB_CMDLINE_LINUX=\"\"/GRUB_CMDLINE_LINUX=\"$CPU_iommu=on video=efifb:off iommu=pt\"/" /etc/default/grub
 
 if command -v update-grub &> /dev/null; then
   sudo update-grub
