@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo apt install qemu-system-x86 libvirt-clients libvirt-daemon-system libvirt-daemon-config-network bridge-utils virt-manager ovmf
 
 #Edit /etc/libvirt/libvirtd.conf
 sed -i 's/#unix_sock_group = "libvirt"/unix_sock_group = "libvirt"/' /etc/libvirt/libvirtd.conf
@@ -30,7 +29,7 @@ GPU=$(sed -n -e 1p GPU.txt)
 if [ -e "/usr/share/vgabios/patched.rom" ]; then
 	echo "GPU ROM already placed."
 
-	elif [ "$GPU" == "Nvidia" ]; then
+	elif [ "$GPU" == "nvidia" ]; then
 		if [ -e "./GPU-ROM/patched.rom" ]; then
 			echo "patched.rom found"
 			mkdir /usr/share/vgabios
@@ -41,7 +40,7 @@ if [ -e "/usr/share/vgabios/patched.rom" ]; then
 			echo "patched.rom not found. Please make a patched.rom then place it in GPU-ROM"
 			exit
 		fi
-	elif [ "$GPU" == "AMD" ]; then
+	elif [ "$GPU" == "amd" ]; then
 		#AMD GPUs don't need a ROM file
 		sleep 0
 	else

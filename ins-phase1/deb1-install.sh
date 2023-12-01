@@ -1,8 +1,10 @@
 #!/bin/bash
+sudo apt install qemu-system-x86 libvirt-clients libvirt-daemon-system libvirt-daemon-config-network bridge-utils virt-manager ovmf -y
 #Define vars
 GPU=$(sed -n -e 1p GPU.txt)
 CPU=$(sed -n -e 1p CPU.txt)
-sed -i "s/GRUB_CMDLINE_LINUX=\"\"/GRUB_CMDLINE_LINUX=\"$CPU_iommu=on video=efifb:off iommu=pt\"/" /etc/default/grub
+echo "$CPU"
+sed -i "s/GRUB_CMDLINE_LINUX=\"\"/GRUB_CMDLINE_LINUX=\"${CPU}_iommu=on video=efifb:off iommu=pt\"/" /etc/default/grub
 
 if command -v update-grub &> /dev/null; then
   sudo update-grub

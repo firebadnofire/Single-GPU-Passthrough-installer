@@ -27,11 +27,11 @@ while true; do
 
     case $choice1 in
         1)
-            echo "AMD" > CPU.txt
+            echo "amd" > CPU.txt
             break
             ;;
         2)
-            echo "Intel" > CPU.txt
+            echo "intel" > CPU.txt
             break
             ;;
         3)
@@ -53,11 +53,11 @@ while true; do
 
     case $choice1 in
         1)
-            echo "AMD" > GPU.txt
+            echo "amd" > GPU.txt
             break
             ;;
         2)
-            echo "Nvidia" > GPU.txt
+            echo "nvidia" > GPU.txt
             break
             ;;
         3)
