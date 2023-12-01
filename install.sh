@@ -18,10 +18,7 @@ fi
 
 OS=$(sed -n -e 1p OS.txt)
 
-if [ "$OS" == "pop" ]; then
-	./ins-phase2/pop2-install.sh
-
-elif [ "$OS" == "deb" ]; then
+if [ "$OS" == "deb" ]; then
 	ins-phase2/deb2-install.sh
 
 elif [ "$OS" == "arch" ]; then
